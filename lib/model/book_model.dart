@@ -4,6 +4,7 @@ class BookModel {
   final String author;
   final String coverUrl;
   final String downloadUrl;
+  bool favorite = false;
 
   BookModel({
     required this.id,
