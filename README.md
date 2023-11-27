@@ -1,16 +1,12 @@
-# escribo_2_ebook
+# Escribo Challenge 2 - Ebook Reader
 
-A new Flutter project.
+O projeto foi criado para teste de conhecimentos em Dart/Flutter. Trata-se de um aplicativo Flutter para leitura de Ebooks já disponibilizados por uma API da própria empresa Escribo.
 
-## Getting Started
+## Informações
 
-This project is a starting point for a Flutter application.
+<p>Conforme solicitado, na raiz desse repositório há um instalador do aplicativo, de nome "app-release.aab".<br>
+Basta instalar dessa fonte e testar o quanto quiser.</p>
+ 
+ <p>O aplicativo permite que favoritos sejam salvos numa instância do usuário.</p>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ <p>Para sair da leitura de um dos Ebooks, basta usar o BACK BUTTON padrão dos smartphones, e ele retonará para a tela de livros.</p>

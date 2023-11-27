@@ -7,10 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vocsy_epub_viewer/epub_viewer.dart';
-import 'package:get/get.dart';
 
 class MainScreen extends StatefulWidget {
-  MainScreen({super.key});
+  const MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -80,7 +79,7 @@ class _MainScreenState extends State<MainScreen> {
         ? await getExternalStorageDirectory()
         : await getApplicationDocumentsDirectory();
 
-    String path = appDocDir!.path + '/sample.epub';
+    String path = '${appDocDir!.path}/sample.epub';
     File file = File(path);
     await file.create();
     await dio.download(
@@ -107,7 +106,7 @@ class _MainScreenState extends State<MainScreen> {
 
   BookRepository repository = BookRepository();
   bool firstLoading = true;
-  final platform = MethodChannel('my_channel');
+  final platform = const MethodChannel('my_channel');
   bool loading = false;
   Dio dio = Dio();
   String filePath = "";
@@ -216,7 +215,7 @@ class _MainScreenState extends State<MainScreen> {
                                     var snackBar = SnackBar(
                                       content: Text(
                                           "Estamos obtendo os dados da API, aguarde... Alguns livros podem demorar mais para realizar o download.\nCarregando: ${booksListOnlyFavorites[index].title}"),
-                                      duration: const Duration(seconds: 12),
+                                      duration: const Duration(seconds: 10),
                                     );
                                     ScaffoldMessenger.of(context)
                                         .showSnackBar(snackBar);
@@ -300,10 +299,10 @@ class _MainScreenState extends State<MainScreen> {
                                           child: IconButton(
                                             icon: booksList[index].favorite
                                                 ? const Icon(Icons.bookmark,
-                                                    color: Colors.yellow)
+                                                    color: Colors.red)
                                                 : const Icon(
                                                     Icons.bookmark_border),
-                                            iconSize: 30,
+                                            iconSize: 40,
                                             onPressed: () {
                                               if (booksList[index].favorite ==
                                                   false) {
